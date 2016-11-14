@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Tokenizer implements TokenizerObservable {
-
+    private static final String PUNCT = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~\n\t ";
     // ассоциативный массив, где ключем является название обработчика токенов
     // а значением - сам обработчик
     private Map<String, TokenHandler> handlers;
@@ -87,8 +87,7 @@ public class Tokenizer implements TokenizerObservable {
                 onWord = true;
                 currentToken += textAsCharArray[i];
             }
-            if (Character.isWhitespace(textAsCharArray[i])) {
-
+            if (PUNCT.contains(String.valueOf(textAsCharArray[i]))) {
                 if (onNumber) {
                     Token currentNumber = new Number();
                     currentNumber.setText(currentToken);

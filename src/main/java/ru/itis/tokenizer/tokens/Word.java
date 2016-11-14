@@ -11,7 +11,7 @@ public class Word extends Token{
         super(begin, end, text);
         this.value = value;
         char[] valueAsCharArray = this.value.toCharArray();
-        for ( int i = 0;i < valueAsCharArray.length; i++)
+        for ( int i = 0; i < valueAsCharArray.length; i++)
         if(Character.isUpperCase(valueAsCharArray[i])){
             this.isUpperFirst = true;
         }
