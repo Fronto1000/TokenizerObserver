@@ -18,7 +18,7 @@ hs_err_pid*
 /commit.txt
 /*/logs/
 /*/wrk/
-.idea
+/.idea
 effective-pom.xml
 effective-settings.xml
 /*/.gwt/
